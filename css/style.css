@@ -1,0 +1,43 @@
+/* BEGIN RESET */
+* {
+  margin:0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* END RESET */
+
+/* General Settings */
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: lightgreen;
+}
+.hidden {
+  display: none;
+}
+.wrapper {
+  padding: 30px;
+  text-align: center;
+  width: 85%;
+  margin: 0 auto;
+  background: lightgrey;
+  border-radius: 10px;
+  border: 3px solid black;
+}
+button {
+  margin: 20px;
+  font-size: 30px;
+  background: lightblue;
+  padding: 10px;
+  border-radius: 10px;
+  border: 3px solid black;
+}
+.wrapper div[class*="-wrapper"] {
+  font-size: 30px;
+  background: red;
+  width: 30%;
+  margin: 0 auto;
+  height: 150px;
+  border-radius: 10px;
+  border: 3px solid black;
+
+}
