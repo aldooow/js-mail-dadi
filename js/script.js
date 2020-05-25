@@ -1,37 +1,53 @@
 // Lista Email!!!!
-var emailForm = prompt("email");
-var alertForm = document.getElementById('js_alert');
+var emailForm = document.getElementById('js_email-form');
 var email = ['pinco@aol.com', 'pallino@aol.com', 'lucky@aol.com', 'pinina@aol.com']
+// Tasti Email!!!
+var buttonInvia = document.getElementById('js_button-invia');
+var alertForm = document.getElementById('js_alert');
+
 var mailCorretta = false;
 
-for ( var i = 0; i < email.length; i++) {
-   if (email[i] === emailForm) {
-   mailCorretta = true;
- }
-}
+// Elementi da nascondere!!!
+var hiddenZero = document.getElementById('js_hidden-0');
 
-if (mailCorretta) {
-  alert('Email corretta, puo accedere');
-  alert.innerHTML = 'Email corretta, puo accedere';
-} else {
-  alert('Mi dispiace, non puoi accedere');
-  alert.innerHTML = 'Mi dispiace, non puoi accedere';
-}
+// Evento dopo il "Click" sul tasto "Invio"
+buttonInvia.addEventListener('click',
+function() {
+  // Se inseriscono una mail della lista, autorizziamo l'acceso!!!
+  for ( var i = 0; i < email.length; i++) {
+     if (email[i] === emailForm.value) {
+     mailCorretta = true;
+   }
+  }
+  if (mailCorretta) {
+    // Nel caso sia autorizzato l'acceso, nascondiamo la prima finestra, e apriamo quella del gioco!!
+    alert('Email corretta, puo accedere');
+    hiddenZero.className = 'wrapper hidden';
+    hiddenUno.className = 'wrapper';
+  } else {
+    // Nel caso non si inserisca una mail della lista, viene fuori un messaggio!!
+    alert('Mi dispiace, non puoi accedere');
+    alertForm.innerHTML = '<b>Mi dispiace, non puoi accedere</b>';
+  }
 
+})
 
-// Gioco dei dadi!!!
+// GIOCO DEI DADI!!!
 
+// Tasti del gioco!!
 var buttonSi = document.getElementById('js_si');
 var buttonNo = document.getElementById('js_no');
 
+// Elementi da Nascondere!!!
 var hiddenUno = document.getElementById('js_hidden-1');
 var hiddenDue = document.getElementById('js_hidden-2');
 
+// Evento dopo il "Click" sul tasto "SI"!!
 buttonSi.addEventListener('click',
  function() {
    hiddenDue.className = 'wrapper';
  } )
-
+// Evento dopo il "Click" sul tasto "NO"!!
 buttonNo.addEventListener('click',
 function() {
   hiddenDue.className = 'wrapper hidden';
