@@ -32,6 +32,9 @@ button {
   border: 3px solid black;
 }
 .wrapper div[class*="-wrapper"] {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-size: 30px;
   background: red;
   width: 30%;
@@ -39,5 +42,8 @@ button {
   height: 150px;
   border-radius: 10px;
   border: 3px solid black;
-
+}
+.js_utente,
+.js_computer {
+  font-size: 400px;
 }

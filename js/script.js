@@ -42,6 +42,7 @@ var buttonNo = document.getElementById('js_no');
 var hiddenUno = document.getElementById('js_hidden-1');
 var hiddenDue = document.getElementById('js_hidden-2');
 
+
 // Evento dopo il "Click" sul tasto "SI"!!
 buttonSi.addEventListener('click',
  function() {
@@ -50,16 +51,26 @@ buttonSi.addEventListener('click',
 // Evento dopo il "Click" sul tasto "NO"!!
 buttonNo.addEventListener('click',
 function() {
+
   hiddenDue.className = 'wrapper hidden';
 } )
 
 var buttonVersus = document.getElementById('js_versus');
 var playerUtente = document.getElementById('js_utente');
 var playerComputer = document.getElementById('js_computer');
-var lama = document.getElementById('lama');
+var note = document.getElementById('js_note');
+note.innerHTML = "PRONTO?????";
+
+// Evento dopo il "Click" sul tasto "VERSUS"!!
 buttonVersus.addEventListener('click',
 function() {
   playerUtente.innerHTML = Math.floor(Math.random() * 6) + 1;
   playerComputer.innerHTML = Math.floor(Math.random() * 6) + 1;
-
+  if (playerUtente.innerHTML > playerComputer.innerHTML) {
+    note.innerHTML = "<h2>HAI VINTO TUU!!!</2>";
+  } else if (playerUtente.innerHTML < playerComputer.innerHTML) {
+    note.innerHTML = "<h2>IL COMPUTER HA VINTO!!!</2>";
+  } else {
+    note.innerHTML = "<h2>PARI!!!</2>";
+  }
 })
